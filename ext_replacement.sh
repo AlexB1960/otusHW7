@@ -47,7 +47,7 @@ fi
 while [[ $files_num -gt 0 ]]; do
 	file=${files[$files_num-1]}
 	if [[ ${files[$files_num-1]} == *.$ext ]] then
-		file_new_name=$(echo "${file/$ext/$rep}")
+		file_new_name=$(echo "${file/.$ext/.$rep}")
 		if [[ $file != $file_new_name ]]; then
 			mv "$file" "$file_new_name"
 			echo "$dir_path$file_new_name"
